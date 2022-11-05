@@ -1,3 +1,3 @@
-import * as user from "./auth"
+import * as user from './auth'
 
 export { user }

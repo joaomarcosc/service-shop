@@ -1,7 +1,8 @@
-import * as dotenv from "dotenv";
-import express from "express"
-import mongoose from "mongoose"
-import routes from "./routes/auth"
+import * as dotenv from 'dotenv';
+import express from 'express'
+import mongoose from 'mongoose'
+
+import routes from './routes/auth'
 
 dotenv.config()
 
@@ -21,14 +22,14 @@ const uri = `mongodb+srv://${DB_USER}:${DB_PWD}@cluster0.tn4whue.mongodb.net/?re
 const port = process.env.PORT || 3000
 
 // Routes
-app.use("/api", routes)
+app.use('/api', routes)
 
 // DB Connection
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
-  console.log("Conectado")
+  console.log('Conectado')
   app.listen(process.env.port || port, () => {
     console.log(`Server was running on port ${port}`)
   })
